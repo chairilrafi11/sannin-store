@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton';
 import { NavLink } from 'react-router-dom';
+import productImageHelper from '../Helper/ProductImageHelper';
+
+
 
 function Products() {
 
@@ -79,25 +82,6 @@ function Products() {
         setFilter(updateList);
     }
 
-    const imageProduct = (kode) => {
-       switch (kode) {
-        case "mobile-legends":
-            return require("../assets/ml.jpeg");
-        case "pubgm":
-            return require("../assets/pubgm.jpeg");
-        case "valorant":
-            return require("../assets/valorant.avif");
-        case "lolwr":
-            return require("../assets/wild-rift.png");
-        case "pubgm":
-            return require("../assets/pubgm.jpeg");
-        case "valorant":
-            return require("../assets/valorant.avif");
-        default:
-            break;
-       } 
-    }
-
     const ShowProducts = () => {
         return (
             <>
@@ -120,14 +104,14 @@ function Products() {
                                 <div className="col-6 col-md-6 col-lg-4 mb-3" key={product.nama}>
 
                                     <div className="card h-100">
-                                        <img src={imageProduct(product.kode)} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.nama} />
+                                        <img src={productImageHelper.imageProduct(product.kode)} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.nama} />
                                         <div className="m-3 mb-0">
                                             <small className="card-title">{product.nama}</small>
                                         </div>
                                         <div style={{ marginTop: "auto" }}>
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="m-3"><b>${product.kode}</b></div>
-                                                <NavLink className="stretched-link" to={`/product/${product.id}`}>
+                                                <NavLink className="stretched-link" to={`/product/${product.kode}`}>
                                                     <button className="btn btn-sm m-3 border-primary">
                                                         <i className="fa fa-arrow-right text-muted"></i>
                                                     </button>

@@ -3,6 +3,10 @@ import { useParams } from 'react-router';
 import Skeleton from 'react-loading-skeleton';
 import { NavLink } from 'react-router-dom';
 
+import ProductImageHelper from '../Helper/ProductImageHelper'
+import colorPallete from '../core/ColorPallete';
+
+
 function Product() {
 
     const { id } = useParams();
@@ -12,8 +16,9 @@ function Product() {
     useEffect(() => {
         const getProduct = async () => {
             setLoading(true);
-            const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+            const response = await fetch(`https://lunaticastore.id/api/v1/product?kode=${id}`);
             const data = await response.json();
+            console.log(data);
             setProduct(data);
             setLoading(false);
         }
@@ -31,7 +36,7 @@ function Product() {
                             </div>
                         </NavLink>
                         <div>
-                            <div className="row">
+                            <div className="column">
                                 <div className="col-md-6">
                                     <div className="images p-3">
                                         <div className="text-center p-4">
@@ -86,10 +91,11 @@ function Product() {
                         </NavLink>
                         <div>
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-md-6 border" style={{color: colorPallete.primary}}>
+                                    {console.log(colorPallete.primary)}
                                     <div className="images p-3">
                                         <div className="text-center p-4">
-                                            <img id="main-image" alt="product" src={product.image} width="250" />
+                                            <img id="main-image" alt="product" src={ProductImageHelper.imageProduct(id)} />
                                         </div>
                                     </div>
                                 </div>
