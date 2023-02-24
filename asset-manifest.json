@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sannin-store/static/css/main.18d97150.css",
-    "main.js": "/sannin-store/static/js/main.5ea42a89.js",
+    "main.js": "/sannin-store/static/js/main.ac02988b.js",
     "static/js/787.625e8634.chunk.js": "/sannin-store/static/js/787.625e8634.chunk.js",
     "static/media/pubgm.jpeg": "/sannin-store/static/media/pubgm.5f32771c5d453145054a.jpeg",
     "static/media/wild-rift.png": "/sannin-store/static/media/wild-rift.c338aa0a4646beee130a.png",
@@ -14,11 +14,11 @@
     "static/media/ml.jpeg": "/sannin-store/static/media/ml.196515bd8c4029a27bf9.jpeg",
     "index.html": "/sannin-store/index.html",
     "main.18d97150.css.map": "/sannin-store/static/css/main.18d97150.css.map",
-    "main.5ea42a89.js.map": "/sannin-store/static/js/main.5ea42a89.js.map",
+    "main.ac02988b.js.map": "/sannin-store/static/js/main.ac02988b.js.map",
     "787.625e8634.chunk.js.map": "/sannin-store/static/js/787.625e8634.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.18d97150.css",
-    "static/js/main.5ea42a89.js"
+    "static/js/main.ac02988b.js"
   ]
 }
