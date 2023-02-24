@@ -12,11 +12,12 @@ function Products() {
         let componentMounted = true;
         const getProdcuts = async () => {
             setLoading(true);
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch('https://lunaticastore.id/api/v1/categories');
             if (componentMounted) {
-                const data = await response.json();
-                setData(data);
-                setFilter(data);
+                const dataResponse = await response.json();
+                setData(dataResponse['data']);
+                // var index = data.indexOf((e) => e.key == 'telkomsel')
+                // data.splice(index, 1);
                 setLoading(false);
             }
             return () => {
@@ -78,6 +79,25 @@ function Products() {
         setFilter(updateList);
     }
 
+    const imageProduct = (kode) => {
+       switch (kode) {
+        case "mobile-legends":
+            return require("../assets/ml.jpeg");
+        case "pubgm":
+            return require("../assets/pubgm.jpeg");
+        case "valorant":
+            return require("../assets/valorant.avif");
+        case "lolwr":
+            return require("../assets/wild-rift.png");
+        case "pubgm":
+            return require("../assets/pubgm.jpeg");
+        case "valorant":
+            return require("../assets/valorant.avif");
+        default:
+            break;
+       } 
+    }
+
     const ShowProducts = () => {
         return (
             <>
@@ -95,18 +115,18 @@ function Products() {
 
                 <div className="col-md-9 py-md-3">
                     <div className="row">
-                        {filter.map((product) => {
+                        {data.map((product) => {
                             return (
-                                <div className="col-6 col-md-6 col-lg-4 mb-3" key={product.id}>
+                                <div className="col-6 col-md-6 col-lg-4 mb-3" key={product.nama}>
 
                                     <div className="card h-100">
-                                        <img src={product.image} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.title} />
+                                        <img src={imageProduct(product.kode)} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.nama} />
                                         <div className="m-3 mb-0">
-                                            <small className="card-title">{product.title.substring(0, 50)}...</small>
+                                            <small className="card-title">{product.nama}</small>
                                         </div>
                                         <div style={{ marginTop: "auto" }}>
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <div className="m-3"><b>${product.price}</b></div>
+                                                <div className="m-3"><b>${product.kode}</b></div>
                                                 <NavLink className="stretched-link" to={`/product/${product.id}`}>
                                                     <button className="btn btn-sm m-3 border-primary">
                                                         <i className="fa fa-arrow-right text-muted"></i>
