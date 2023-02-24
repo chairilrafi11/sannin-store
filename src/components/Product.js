@@ -5,11 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 import ProductImageHelper from '../Helper/ProductImageHelper'
 import colorPallete from '../core/ColorPallete';
+import productDescriptionHelper from '../Helper/ProductDescriptionHelper';
 
 
 function Product() {
 
     const { id } = useParams();
+    const { productName } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -91,15 +93,30 @@ function Product() {
                         </NavLink>
                         <div>
                             <div className="row">
-                                <div className="col-md-6 border" style={{color: colorPallete.primary}}>
-                                    {console.log(colorPallete.primary)}
-                                    <div className="images p-3">
-                                        <div className="text-center p-4">
-                                            <img id="main-image" alt="product" src={ProductImageHelper.imageProduct(id)} />
+                                <div className="col-md-4 border border-primary rounded" style={{color: colorPallete.primary}}>
+                                    <div>
+                                        <div className="images p-3">
+                                            <div className="text-center">
+                                                <img id="main-image" alt="product" src={ProductImageHelper.imageProduct(id)} width="300"/>
+                                            </div>
+                                        </div>
+                                        <div className='text-center color-primary'>
+                                            <h5>{productName}</h5>
                                         </div>
                                     </div>
+                                    <div className='mt-5'>
+                                        {productDescriptionHelper.findProductDescription(id)}
+                                    </div>
+                                    <div className='text-center mt-5 mb-5'>
+                                        <div>Estimasi Proses Otomatis 1-3 Menit</div>
+                                        <div>Event Maximal 120 Menit</div>
+                                        <div>Layanan Aktif 24 Jam!</div>
+                                    </div>
+                                    <div>
+
+                                    </div>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-8">
                                     <div className="border p-4">
                                         <div className="mt-4 mb-3">
 
@@ -130,7 +147,7 @@ function Product() {
 
     return (
         <>
-            <div className="container px-0 mb-5" style={{ marginTop: "66px" }}>
+            <div className="container px-0 mb-5" style={{ marginTop: "80px" }}>
 
                 {loading ? <Loading /> : <ShowDetails />}
 

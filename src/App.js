@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/sannin-store/" element={<Home />} />
-        <Route exact path="/product/:id" element={<Product />} />
+        <Route exact path="/product/:id/:productName" element={<Product />} />
       </Routes>
       <Footer />
     </>
