@@ -11,16 +11,19 @@ const Navbar = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <i className="fa fa-bars"></i>
                     </button>
-                    <NavLink to="/">
-                        <img src={require('../assets/FakeShop.png')} alt="logo" style={{ height: "50px" }} />
-                    </NavLink>
+                    {/* <NavLink to="/"> */}
+                        <h1 className="card-title">Sannin Store</h1>
+                        {/* <img src={require('../assets/FakeShop.png')} alt="logo" style={{ height: "50px" }} /> */}
+                    {/* </NavLink> */}
                     <button className="navbar-toggler" type="button">
                         <i className="fa fa-shopping-cart"></i>
                     </button>
                     <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             <NavLink to="/">
-                                <img src={require('../assets/FakeShop.png')} alt="logo" style={{ height: "50px" }} />
+                                {/* <img src={require('../assets/FakeShop.png')} alt="logo" style={{ height: "50px" }} /> */}
+                                
+                                <small className="card-title">Sannin Store</small>
                             </NavLink>
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>

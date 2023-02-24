@@ -101,37 +101,19 @@ function Products() {
     const ShowProducts = () => {
         return (
             <>
-                <div className="col-md-3 my-3">
-
-                    <div className="position-sticky" style={{ top: "100px" }}>
-                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => setFilter(data)}>All</button>
-                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("women's clothing")}>Women's Clothing</button>
-                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
-                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("electronics")}>Electronics</button>
-                    </div>
-
-                </div>
-
-                <div className="col-md-9 py-md-3">
+                <div className="col-md-12 py-md-3" style={{paddingLeft: 100, paddingRight: 100}}>
                     <div className="row">
                         {data.map((product) => {
                             return (
-                                <div className="col-6 col-md-6 col-lg-4 mb-3" key={product.nama}>
-
-                                    <div className="card h-100">
+                                <div className="col-8 col-md-8 col-lg-3 mb-3" key={product.nama}>
+                                    <div className="card mx-auto">
                                         <img src={imageProduct(product.kode)} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.nama} />
-                                        <div className="m-3 mb-0">
-                                            <small className="card-title">{product.nama}</small>
+                                        <div className="m-3 mb-0 align-items-center">
+                                            <h4 className="card-title"><b>{product.nama}</b></h4>
                                         </div>
                                         <div style={{ marginTop: "auto" }}>
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <div className="m-3"><b>${product.kode}</b></div>
-                                                <NavLink className="stretched-link" to={`/product/${product.id}`}>
-                                                    <button className="btn btn-sm m-3 border-primary">
-                                                        <i className="fa fa-arrow-right text-muted"></i>
-                                                    </button>
-                                                </NavLink>
+                                                <div className="m-3">Proses Otomatis</div>
                                             </div>
                                         </div>
                                     </div>
@@ -141,8 +123,6 @@ function Products() {
                     </div>
 
                 </div>
-
-
             </>
         )
     }
