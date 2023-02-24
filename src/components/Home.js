@@ -4,7 +4,7 @@ import Products from './Products';
 const Home = () => {
     return (
         <>
-            <div className="container px-0" style={{ marginTop: "66px" }}>
+            <div className="container px-0" style={{ marginTop: "66px", }}>
                 <div id="FakeShopCarouselInterval" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active" data-bs-interval="10000">
